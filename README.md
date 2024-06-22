@@ -1,10 +1,103 @@
 # Supply_Chain_Optimisation
-The database contains
-information about suppliers, products, orders, and shipments, which can be leveraged to
-improve supply chain operations.
-Objectives:
-1. Analyze supplier performance and identify opportunities for collaboration.
-2. Optimize inventory levels to reduce stockouts and improve customer satisfaction.
-3. Streamline order fulfillment processes to enhance efficiency and reduce costs.
-4. Identify key trends and patterns in order and shipment data for strategic decision-making.
-   
+
+## PROBLEM STATEMENT 🎯
+A company operates in the retail industry and sources products from various suppliers to stock its inventory.
+The objective of this analysis is to optimize its supply chain management process to ensure efficient order fulfillment, minimize stockouts, and reduce carrying costs. 
+
+## OBJECTIVE
+* Analyze supplier performance and identify opportunities for collaboration.
+* Optimize inventory levels to reduce stockouts and improve customer satisfaction.
+* Streamline order fulfillment processes to enhance efficiency and reduce costs.
+* Identify key trends and patterns in order and shipment data for strategic decision-making.
+
+## TECHNOLOGY
+Business Intelligence
+
+## TOOLS USED
+MySQL, MS Excel
+
+## DATASET
+TThe database is structured to store and manage information related to suppliers, products, orders, and shipments. MySQL is used for database creation and management.
+### Database Schema : Contains 4 Tables
+1. Suppliers Table
+  Columns: supplier_id: Integer(Primary Key) , supplier_name, contact_person, phone_number, email
+  Description: This table stores information about suppliers, including their ID, name, contact person, phone number, and email address.
+  Sample Rows:
+  * Supplier A: John Smith, 123-456-7890, john@example.com
+  * Supplier B: Alice Johnson, 987-654-3210, alice@example.com
+2. Products Table
+   Columns: product_id: Integer (Primary Key), product_name, description, unit_price, quantity_in_stock
+   Description: This table contains details about products, including their ID, name, description, unit price, and quantity in stock.
+   Sample Rows:
+  * Product A: Description for Product A, $10.00, 100 units in stock
+  * Product B: Description for Product B, $20.00, 200 units in stock
+3. Orders Table
+   Columns: order_id: Varchar(10), (Primary Key) ,product_id: Foreign Key referencing Products.product_id, supplier_id:  Foreign Key referencing 
+   Suppliers.supplier_id, order_date, quantity_ordered ,order_status
+   Description: This table records orders placed for products, including the order ID, product ID, supplier ID, order date, quantity ordered, and order status.
+
+4. Shipments Table
+   Columns: shipment_id: Varchar(10), Primary Key ,order_id: Varchar(10), Foreign Key referencing Orders.order_id, shipment_date ,carrier, tracking_number, 
+   delivery_status
+   Description: This table tracks shipments of orders, including the shipment ID, order ID, shipment date, carrier, tracking number, and delivery status.
+
+
+**The Data Integrity and Relationships are maintained by:**
+1. Foreign Keys:
+The product_id in the Orders table references the product_id in the Products table.
+The supplier_id in the Orders table references the supplier_id in the Suppliers table.
+The order_id in the Shipments table references the order_id in the Orders table.
+Primary Keys: Unique identifiers for each table to ensure data integrity.
+
+## QUESTIONS
+1. Select all records from the Suppliers table.
+2. Select product name and unit price from the Products table
+3. Select order IDs and order dates from the Orders table
+4. Select shipment IDs and shipment dates from the Shipments table
+5. Count the total number of products in stock
+6. Calculate the average unit price of products
+7. Find the maximum quantity ordered
+8. List suppliers along with their contact persons
+9. List products with their descriptions
+10. Display shipment details including the tracking number
+11. List orders along with the associated supplier information
+12. Display products that have a unit price greater than $15
+13. Count the number of orders per supplier
+14. Calculate the total quantity ordered for each product
+15. List shipments along with the associated order information
+16. Find suppliers with more than 2 contacts
+17. Calculate the average quantity ordered per order
+18. List products along with the total number of orders they are associated with.
+19. Display orders that are in progress (order_status = 'In Progress')
+20. Find the earliest and latest order dates
+21. Calculate the total revenue generated from orders
+22. List suppliers along with the total quantity ordered from them
+23. Find products with the highest unit price
+24. List orders along with the associated supplier and product information
+25. Display the top 3 products with the highest quantity ordered
+26. Find the percentage of completed orders out of total orders
+27. Calculate the total number of shipments per shipping company
+28. List suppliers who have not yet made any orders
+29. Display orders along with the corresponding shipment details, if available.
+30. Find the top 5 suppliers with the highest total quantity ordered.
+31. Find the total revenue generated by each supplier
+32. Calculate the average delivery time for each shipping company.
+33. Identify products that have never been ordered
+34. Find the top 3 shipping companies with the most shipments
+35. Calculate the percentage of orders that were completed for each supplier.
+36. Identify products with low inventory levels (less than 50 in stock) that need restocking.
+37. Find the top 5 suppliers with the highest total revenue.
+38. Calculate the total number of orders made each month.
+39. Identify suppliers with declining order trends over the past three months.
+40. Calculate the average shipment duration for each supplier.
+41. IdentifY Seasonal Demand Patterns
+42. Product Popularity Trends.
+43. Correlation between Order Frequency, Product Categories, and Customer
+Demographics.
+44. Forecast Future Demand.
+
+
+
+
+
+
